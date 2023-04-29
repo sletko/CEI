@@ -18,6 +18,4 @@ public class DbException extends RuntimeException {
 		super(message, cause);
 	}
 
-
-
 }
