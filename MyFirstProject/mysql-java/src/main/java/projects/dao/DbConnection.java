@@ -3,6 +3,8 @@ package projects.dao;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.sql.Statement;
+
 import projects.exception.DbException;
 
 public class DbConnection {
@@ -18,13 +20,25 @@ public class DbConnection {
 				PASSWORD);
 
 		System.out.println("Connection url =" + url);
+		
+		//sql query
 
 		try {
 			Connection conn = DriverManager.getConnection(url);
 			System.out.println("Succesfull connection to Db!");
 			return conn;
-		} catch (SQLException e) {
-			throw new DbException(e);
-		}
+			
+			//insert query
+			//Statement statement = access.createStatement();
+			//ResultsSet list = statement.executeQuery(query);
+			
+			//While(list.next()) {
+				
+			//}
+			
+			
+			} catch (SQLException e) {
+				throw new DbException(e);
+				}
 	}
 }
